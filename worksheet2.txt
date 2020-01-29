@@ -1,0 +1,42 @@
+ CREATE DATABASE Company;
+    USE Company  ;
+    CREATE TABLE employee (
+    employee_id INT NOT NULL AUTO_INCREMENT,
+    employee_name VARCHAR(100),
+    employee_hire DATE,
+    employee_salary INT,
+    PRIMARY KEY (employee_id)
+    ) ;
+
+
+   insert into employee(employee_name,employee_hire,employee_salary) values ("ada" ,"2010-01-02" ,  3500);
+   insert into employee(employee_name,employee_hire,employee_salary) values ("berk" ," 2009-10-15" , 2700);
+   insert into employee(employee_name,employee_hire,employee_salary) values ("aoran" ," 2010-06-18" , 4000);
+   insert into employee(employee_name,employee_hire,employee_salary) values ("muhammad" ," 2005-08-08" , 5500);
+   insert into employee(employee_name,employee_hire,employee_salary) values ("elizamed" , " 1999-11-20" , 10000);
+   
+    SELECT * FROM employee;
+   
+  SELECT employee_name FROM employee WHERE employee_name LIKE "A" ;
+  
+  SELECT employee_hire FROM employee WHERE employee_hire  >= "2010-01-02" ; 
+  
+  SELECT employee_salary FROM employee WHERE employee_salary  <=3500 ;
+  
+  ALTER TABLE employee
+  ADD COLUMN phone VARCHAR(15);
+  UPDATE employee
+  SET phone = "555" WHERE employee_id = "1"; 
+    UPDATE employee
+  SET phone = "543" WHERE employee_id = "2"; 
+    UPDATE employee
+  SET phone = "532" WHERE employee_id = "3"; 
+    UPDATE employee
+  SET phone = "578" WHERE employee_id = "4"; 
+    UPDATE employee
+  SET phone = "588" WHERE employee_id = "5"; 
+ SELECT * FROM employee;
+ 
+ SELECT STDDEV(employee_salary)
+ FROM employee;
+ 
